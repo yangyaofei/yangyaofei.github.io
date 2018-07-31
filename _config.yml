@@ -7,20 +7,15 @@ author: "yangyaofei"
 # URL
 baseurl: ""
 permalink: /:year/:month/:day/:title/
-
 # Markdown
 markdown: kramdown
-
 # Navigation
 # nav:
 #   - name:           "About"
 #     href:           "//kiko.gfjaru.com/about"
-
-
 # Sass
 sass:
   style:            :compressed
-
 # Scopes
 defaults:
   -
@@ -35,6 +30,5 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
-
 gems:
   - jekyll-seo-tag
