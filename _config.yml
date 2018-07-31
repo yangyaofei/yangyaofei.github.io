@@ -20,9 +20,9 @@ permalink:          /:year/:month/:day/:title/
 markdown:           kramdown
 
 # Navigation
-nav:
-  - name:           "About"
-    href:           "//kiko.gfjaru.com/about"
+# nav:
+#   - name:           "About"
+#     href:           "//kiko.gfjaru.com/about"
 
 
 # Sass
