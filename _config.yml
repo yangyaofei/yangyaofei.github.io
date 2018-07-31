@@ -3,12 +3,12 @@
 # # # # # # # #
 
 # Basic
-name:               "yangyaofei's blog"
-# description:        "记录东西..."
+name: "yangyaofei's blog"
+description: "记录东西..."
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
-url:                "//blog.yangyaofei.name"
-author:             "yangyaofei"
+url: "//blog.yangyaofei.name"
+author: "yangyaofei"
 
   username:         "yangyaofei"
 
