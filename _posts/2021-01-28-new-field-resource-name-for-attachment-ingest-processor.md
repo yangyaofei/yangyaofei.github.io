@@ -27,43 +27,43 @@ This field is easily to use. I will show it with python:
 
 ``` python
 
-	import cbor2
-	import requests
-	import json
+import cbor2
+import requests
+import json
 
-	# create a pipeline and set attachment's field
+# create a pipeline and set attachment's field
 
-	pipeline = {
-        "description": "Store file's meta data and text to ES",
-        "processors": [
-            {
-                "attachment": {
-                    "field": "data",
-                    # "resource_name": "file_name" you can change the field name to want you want
-                }
-            }
-		]
-	}
-	requests.put(
-		url='http://localhost:9200/_ingest/pipeline/cbor-attachment',
-		data=json.dumps(pipeline)
-	)
+pipeline = {
+	"description": "Store file's meta data and text to ES",
+	"processors": [
+		{
+			"attachment": {
+				"field": "data",
+				# "resource_name": "file_name" you can change the field name to want you want
+			}
+		}
+	]
+}
+requests.put(
+	url='http://localhost:9200/_ingest/pipeline/cbor-attachment',
+	data=json.dumps(pipeline)
+)
 
-	#  assume there is a file nameed somename.txt and we read it from binary
-	file_data = read_from_file
-	file_name = "somename.txt"
+#  assume there is a file nameed somename.txt and we read it from binary
+file_data = read_from_file
+file_name = "somename.txt"
 
-	# process and put it to elasticsearch
-	data = {
-		"data" = file_data,
-		"resource_name" = file_name
-	}
-	headers = {'content-type': 'application/cbor'}
-	requests.put(
-    	'http://localhost:9200/index-000001/_doc/id?pipeline=cbor-attachment',
-    	data=cbor2.dumps(data),
-    	headers=headers
-  	)
+# process and put it to elasticsearch
+data = {
+	"data" = file_data,
+	"resource_name" = file_name
+}
+headers = {'content-type': 'application/cbor'}
+requests.put(
+	'http://localhost:9200/index-000001/_doc/id?pipeline=cbor-attachment',
+	data=cbor2.dumps(data),
+	headers=headers
+)
 ```
 
 After this , you will see the Elasticsearch read this file and get a right encode,
