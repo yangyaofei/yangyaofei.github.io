@@ -25,7 +25,8 @@ add this `resource_name` aka filename to this plugin.
 
 This field is easily to use. I will show it with python:
 
-```
+``` python
+
 	import cbor2
 	import requests
 	import json
